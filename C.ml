@@ -592,14 +592,20 @@ type regexp =
    | P (f,g) -> "("^(string_of_regexp f)^" . "^(string_of_regexp g)^")"
    | S s     -> (string_of_regexp s)^"*"
  
- (*let () =
-  let r = regexp Sys.argv.(1) in
+
+
+let arg = read_line()
+
+ let () =
+  let r = regexp arg in
   let () = print_string "input: " in
-    print_endline (string_of_regexp r)*)
+    print_endline (string_of_regexp r)
  
-let string1 = String.concat "" [" ";read_line()];; (*Is the blank space still needed*)
-let string2 = String.concat "" [" ";read_line()];;
+
+
+(*let string1 = read_line();;
+let string2 = read_line();;
 
 let regpat_in_string regpat str = true;;
 
-let () = if regpat_in_string (string_of_regexp (regexp string1)) string2 then Printf.printf "YES\n" else Printf.printf "NO\n"
+let () = if regpat_in_string (string_of_regexp (regexp string1)) string2 then Printf.printf "YES\n" else Printf.printf "NO\n" *)
